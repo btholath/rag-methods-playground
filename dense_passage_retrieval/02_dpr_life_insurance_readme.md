@@ -1,24 +1,31 @@
 
 ## Script: /dense_passage_retrieval/02_dpr_life_insurance.py
 
-## What This Does
-✅ Uses DPR for insurance-related queries
-✅ Retrieves the most relevant passage from insurance-related data
-✅ Provides similarity scoring for ranking information
+# 🔍 Dense Passage Retrieval for Life Insurance FAQs
+A smart AI-powered script that finds the **most relevant answers** to life insurance questions using **Dense Passage Retrieval (DPR)** and state-of-the-art transformer models.
+
+---
 
 
-This Python script is like a smart assistant that helps find the most relevant information about Life Insurance from a given list of statements. Here’s how it works step by step:
-1️⃣ Load AI models 🧠
+## What This Script Does
+- **Question Answering**: Given a natural language insurance question, retrieves the most relevant passage from a set of life insurance facts.
+- **Semantic Search**: Uses embeddings to match meaning—not just keywords—between questions and answers.
+- **Similarity Scoring**: Ranks statements by cosine similarity, ensuring the best answer is always surfaced.
+
+---
+
+## How It Works (Step by Step)
+1️⃣ **Load AI Models**
 - The script loads two AI models, one for understanding questions and another for understanding statements.
-2️⃣ Ask a Question ❓
+2️⃣ **User Question**
 - You provide a question, like "What are the benefits of whole life insurance?"
-3️⃣ Turn the Question into Numbers 🔢
+3️⃣ **Turn the Question into Numbers**
 - The question is converted into a unique numerical pattern (embedding) so the AI can compare it with other information.
-4️⃣ Compare Against Life Insurance Facts 📄
+4️⃣ **Compare Against Life Insurance Facts**
 - A list of life insurance-related statements (like "Whole life insurance provides lifelong coverage.") is also converted into numbers.
-5️⃣ Find the Closest Match 🎯
+5️⃣ **Find the Closest Match**
 - The script measures similarity between your question and each statement using a special technique called cosine similarity.
-6️⃣ Display the Best Answer ✅
+6️⃣ **Display the Best Answer**
 - It picks the most relevant statement and shows it to you, like "Whole life insurance provides lifelong coverage with a guaranteed death benefit."
 It’s like an AI-powered FAQ system that can match questions with the most relevant answers automatically!
 
