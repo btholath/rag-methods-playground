@@ -33,18 +33,18 @@ A smart AI-powered script that finds the **most relevant answers** to life insur
 
 ## Technical Details
 Dense Passage Retrieval (DPR) using pre-trained transformer models from Hugging Face. Here’s the technical breakdown:
-1️⃣ Model Initialization
-- Loads DPRQuestionEncoder (facebook/dpr-question_encoder-single-nq-base) for encoding queries.
-- Loads DPRContextEncoder (facebook/dpr-ctx_encoder-single-nq-base) for encoding documents.
-- Tokenizers (DPRQuestionEncoderTokenizer & DPRContextEncoderTokenizer) are used for text preprocessing.
-2️⃣ Query Encoding
-- The input question is tokenized and passed through DPRQuestionEncoder, generating a query embedding (pooler_output).
-3️⃣ Document Encoding
-- A predefined list of life insurance passages is tokenized and processed via DPRContextEncoder, generating context embeddings.
-4️⃣ Cosine Similarity Calculation
-- Uses sklearn’s cosine_similarity to compute similarity between the query embedding and all context embeddings.
-5️⃣ Retrieval Ranking
-- The passage with the highest cosine similarity score is selected as the most relevant answer to the query.
-6️⃣ Result Output
-- The script prints the best-matching passage as the AI's response.
+- 1️⃣ Model Initialization
+  - Loads DPRQuestionEncoder (facebook/dpr-question_encoder-single-nq-base) for encoding queries.
+  - Loads DPRContextEncoder (facebook/dpr-ctx_encoder-single-nq-base) for encoding documents.
+  - Tokenizers (DPRQuestionEncoderTokenizer & DPRContextEncoderTokenizer) are used for text preprocessing.
+- 2️⃣ Query Encoding
+  - The input question is tokenized and passed through DPRQuestionEncoder, generating a query embedding (pooler_output).
+- 3️⃣ Document Encoding
+  - A predefined list of life insurance passages is tokenized and processed via DPRContextEncoder, generating context embeddings.
+- 4️⃣ Cosine Similarity Calculation
+  - Uses sklearn’s cosine_similarity to compute similarity between the query embedding and all context embeddings.
+- 5️⃣ Retrieval Ranking
+  - The passage with the highest cosine similarity score is selected as the most relevant answer to the query.
+- 6️⃣ Result Output
+  - The script prints the best-matching passage as the AI's response.
 
