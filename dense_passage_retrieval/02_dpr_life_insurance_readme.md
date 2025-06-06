@@ -48,3 +48,22 @@ Dense Passage Retrieval (DPR) using pre-trained transformer models from Hugging 
 - 6️⃣ Result Output
   - The script prints the best-matching passage as the AI's response.
 
+---
+
+## Use Cases for DPR
+Dense Passage Retrieval (DPR) excels at quickly finding the most relevant information from large collections of unstructured text. Some practical applications include:
+
+- Open-Domain Question Answering
+  - Retrieve precise passages from extensive datasets or knowledge bases to answer user queries in natural language, even when the answer isn’t in a fixed set of documents.
+
+- Document Retrieval
+  - Efficiently locate and rank documents or passages related to a specific query—ideal for legal research, academic literature, and enterprise knowledge management.
+
+- Customer Support Automation
+  - Instantly match customer questions with the most relevant support articles, FAQs, or troubleshooting guides, enabling faster and more accurate responses.
+
+- Enterprise Search
+  - Power internal tools to help employees find policies, SOPs, manuals, or other resources spread across large document repositories.
+
+- Chatbots and Virtual Assistants
+  - Enable conversational agents to provide contextually accurate answers by retrieving and presenting the best-matching information from company data.
