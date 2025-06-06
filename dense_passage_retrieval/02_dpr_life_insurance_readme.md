@@ -15,19 +15,19 @@ A smart AI-powered script that finds the **most relevant answers** to life insur
 ---
 
 ## How It Works (Step by Step)
-1️⃣ **Load AI Models**
-    - The script loads two AI models, one for understanding questions and another for understanding statements.
-2️⃣ **User Question**
-    - You provide a question, like "What are the benefits of whole life insurance?"
-3️⃣ **Turn the Question into Numbers**
-    - The question is converted into a unique numerical pattern (embedding) so the AI can compare it with other information.
-4️⃣ **Compare Against Life Insurance Facts**
-    - A list of life insurance-related statements (like "Whole life insurance provides lifelong coverage.") is also converted into numbers.
-5️⃣ **Find the Closest Match**
-    - The script measures similarity between your question and each statement using a special technique called cosine similarity.
-6️⃣ **Display the Best Answer**
-    - It picks the most relevant statement and shows it to you, like "Whole life insurance provides lifelong coverage with a guaranteed death benefit."
-      It’s like an AI-powered FAQ system that can match questions with the most relevant answers automatically!
+- 1️⃣ **Load AI Models**
+   - The script loads two AI models, one for understanding questions and another for understanding statements.
+- 2️⃣ **User Question**
+   - You provide a question, like "What are the benefits of whole life insurance?"
+- 3️⃣ **Turn the Question into Numbers**
+   - The question is converted into a unique numerical pattern (embedding) so the AI can compare it with other information.
+- 4️⃣ **Compare Against Life Insurance Facts**
+   - A list of life insurance-related statements (like "Whole life insurance provides lifelong coverage.") is also converted into numbers.
+- 5️⃣ **Find the Closest Match**
+   - The script measures similarity between your question and each statement using a special technique called cosine similarity.
+- 6️⃣ **Display the Best Answer**
+   - It picks the most relevant statement and shows it to you, like "Whole life insurance provides lifelong coverage with a guaranteed death benefit."
+     It’s like an AI-powered FAQ system that can match questions with the most relevant answers automatically!
 
 ---
 
