@@ -1,0 +1,14 @@
+numpy
+chromadb
+pandas
+pypdf
+openai
+python-dotenv
+langchain
+langchain-community
+langchain-text-splitters
+umap-learn
+matplotlib
+sentence-transformers
+transformers
+torch
