@@ -1,0 +1,10 @@
+ChromaDB is an open-source vector database designed for storing and retrieving embeddings—numerical representations of text, images, or other unstructured data. It is primarily used in AI applications that require semantic search, similarity matching, and retrieval-augmented generation (RAG).
+
+Key Use Cases
+- Enhancing Large Language Models (LLMs) – ChromaDB helps LLMs retrieve relevant context from stored embeddings, improving responses.
+- Semantic Search – Instead of keyword-based search, it finds conceptually similar documents based on meaning.
+- Recommendation Systems – Used in personalized content recommendations by matching user preferences with stored embeddings.
+- Chatbots & AI Assistants – Helps AI systems retrieve relevant knowledge dynamically.
+- Document Indexing & Retrieval – Stores and retrieves large-scale text embeddings efficiently.
+
+
