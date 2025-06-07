@@ -1,5 +1,5 @@
 # Use a modern Python base image (3.10+ includes SQLite >= 3.35.0)
-FROM python:3.10-slim
+FROM python:3.10-slim-bullseye
 
 # Set environment variables for safer Python and consistent output
 ENV PYTHONUNBUFFERED=1 \
@@ -20,8 +20,11 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
+RUN apt-get purge -y build-essential && apt-get autoremove -y
+
 # Copy your code into the container
 COPY . .
+
 
 # Set entrypoint for running your script (can override in Codespace terminal)
 CMD ["python", "reranking.py"]
