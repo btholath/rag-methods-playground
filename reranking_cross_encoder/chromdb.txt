@@ -8,3 +8,17 @@ Key Use Cases
 - Document Indexing & Retrieval – Stores and retrieves large-scale text embeddings efficiently.
 
 
+
+In Codespaces:
+Codespaces will automatically detect your Dockerfile and build it if you have a .devcontainer setup (see next section).
+
+You can open a terminal and run:
+docker build -t rag-rerank .
+docker run --rm -it -v $PWD:/app rag-rerank
+Or just use the Codespace terminal inside the running container:
+
+Inside the running container or Codespace terminal:
+python -c "import sqlite3; print(sqlite3.sqlite_version)"
+
+Run Your Script
+python reranking.py
