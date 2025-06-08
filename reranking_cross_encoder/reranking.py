@@ -1,3 +1,10 @@
+"""
+RecursiveCharacterTextSplitter and SentenceTransformersTokenTextSplitter
+Why do this?
+Many language models have limits on input size (tokens or characters).
+Chunks allow you to efficiently embed, search, or process large documents piece by piece.
+Ensures context is preserved without exceeding model limits.
+"""
 import os
 from dotenv import load_dotenv
 from pypdf import PdfReader
@@ -37,17 +44,46 @@ for path in pdf_paths:
     all_texts.extend(texts)
 
 # ========== 3. Chunking ==========
+# text chunking—a preprocessing step often used in Retrieval-Augmented Generation (RAG), document retrieval, and embedding workflows.
+"""
+RecursiveCharacterTextSplitter
+Purpose: Splits long documents into smaller, manageable “chunks” based on certain separator tokens.
+
+Config:
+separators: It tries to split at double newlines first, then single newlines, then periods+space, then single spaces, and as a last resort, anywhere ("").
+chunk_size=1000: Each chunk will have up to 1000 characters.
+chunk_overlap=0: Chunks do not overlap.
+
+Usage:
+character_split_texts = character_splitter.split_text("\n\n".join(all_texts))
+This joins all text by double newlines, then splits it into character-based chunks.
+"""
 character_splitter = RecursiveCharacterTextSplitter(
     separators=["\n\n", "\n", ". ", " ", ""], chunk_size=1000, chunk_overlap=0
 )
 character_split_texts = character_splitter.split_text("\n\n".join(all_texts))
 
+
+"""
+SentenceTransformersTokenTextSplitter
+Purpose: Further splits each chunk into token-based pieces, suitable for models that have token input limits.
+
+Config:
+tokens_per_chunk=256: Each chunk will contain up to 256 tokens.
+chunk_overlap=0: No overlap between chunks.
+
+Usage:
+Loops over the character chunks, and splits each into token-based subchunks.
+"""
 token_splitter = SentenceTransformersTokenTextSplitter(
     chunk_overlap=0, tokens_per_chunk=256
 )
 token_split_texts = []
 for text in character_split_texts:
     token_split_texts += token_splitter.split_text(text)
+
+
+
 
 # ========== 4. Embedding & Chroma Vector DB ==========
 chroma_client = chromadb.Client()

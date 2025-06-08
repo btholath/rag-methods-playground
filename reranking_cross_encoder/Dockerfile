@@ -1,30 +1,31 @@
-# Use a modern Python base image (3.10+ includes SQLite >= 3.35.0)
-FROM python:3.10-slim-bullseye
+# Use a modern Python base image (ensures SQLite >= 3.35.0)
+FROM python:3.10-slim
 
-# Set environment variables for safer Python and consistent output
+# Set environment variables for cleaner, reproducible builds
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
 
-# Install system dependencies (if you need to build packages)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-
-# Create and set working directory
 WORKDIR /app
 
-# Copy requirements if available, then install them
+# (Optional but recommended) Install system dependencies for scientific packages
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends build-essential && \
+    rm -rf /var/lib/apt/lists/*
+
+# Upgrade pip first to latest
+RUN pip install --upgrade pip
+
+# Copy requirements first for Docker layer caching
 COPY requirements.txt .
 
-# Install Python dependencies
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+# Remove hash-checking mode from pip for torch (if present)
+# Install torch first to isolate big download (if torch fails, you retry only torch, not all packages)
+RUN pip install --no-cache-dir torch
 
-RUN apt-get purge -y build-essential && apt-get autoremove -y
+# Then install all other requirements (except torch)
+RUN pip install --no-cache-dir --no-deps -r requirements.txt
 
-# Copy your code into the container
+# Copy code
 COPY . .
 
-
-# Set entrypoint for running your script (can override in Codespace terminal)
 CMD ["python", "reranking.py"]
