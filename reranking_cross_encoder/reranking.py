@@ -96,6 +96,7 @@ print(f"Added {len(token_split_texts)} chunks to vector DB.")
 
 # ========== 5. Queries (Original & Generated) ==========
 original_query = "What are the surrender charges and withdrawal options for Athene Accumulator 10?"
+
 generated_queries = [
     "What is the minimum and maximum premium allowed?",
     "Explain the free withdrawal provisions.",
