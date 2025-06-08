@@ -6,7 +6,7 @@ Description: A playground for learning and experimenting with Retrieval-Augmente
 
 
 ## Reinstall Virtual environment
-
+```bash
 (.venv) @btholath ➜ /workspaces/rag-methods-playground (main) $ cat /etc/os-release
 NAME="Ubuntu"
 VERSION="20.04.6 LTS (Focal Fossa)"
@@ -132,4 +132,4 @@ import sqlite3
 print(sqlite3.sqlite_version)
 
 pip install 'chromadb==0.3.22'
-
+```
