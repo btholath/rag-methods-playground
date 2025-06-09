@@ -2,14 +2,21 @@
 Query Expansion (with generated answers)
 Generate potential answers to the query [using an LLM] and to get relevant context.
 
-Flow
-Query -> LLM -> Answer -> Vector DB -> Query Results -> LLM -> Answer
+Conceptual Flow (From enhanced query formation to post-retrieval refinement):
+Original Query -> LLM -> **Answer (Contextual Add-on) -> Vector DB -> Query Results -> LLM -> Answer
+The Origianl Query and the Hallucinated **Answer -> Concatenate & Form Augmented Query -> Query Vector Database to Retrieve Relevant Docs ->
+-> Process Retrieved Docs through LLM (Re-ranking) -> Final, Context-Enhanced Answer/Result
 
-Use Cases:
-Information Retrieval
-Question Answering Systems
-e-commerce search
-Academic Research
+
+Use Cases & Applications:
+- Search Engines: Improved query expansion leads to more comprehensive search results.
+
+- Question Answering Systems: More relevant documents or passages are retrieved for better answer synthesis.
+
+- E-Commerce Product Search: Better matching of user intent with product metadata improves accuracy.
+
+- Academic Research: Expanding search queries with related scientific terms helps in fetching a broader range of relevant literature.
+
 """
 
 import warnings
