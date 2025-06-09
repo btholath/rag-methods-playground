@@ -1,3 +1,17 @@
+"""
+Query Expansion (with generated answers)
+Generate potential answers to the query [using an LLM] and to get relevant context.
+
+Flow
+Query -> LLM -> Answer -> Vector DB -> Query Results -> LLM -> Answer
+
+Use Cases:
+Information Retrieval
+Question Answering Systems
+e-commerce search
+Academic Research
+"""
+
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", message="n_jobs value 1 overridden")
